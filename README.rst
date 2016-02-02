@@ -80,4 +80,4 @@ v0.1.0
 ----------------------------------------
 
 - Initial release.
-- Control
+- Basic control of a given Mopidy server.
