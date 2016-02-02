@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+import logging
+logging.basicConfig(level=logging.INFO)
 import jsonrpclib
 
 
@@ -22,10 +24,10 @@ def formatTimeposition(milliseconds):
     seconds = milliseconds//1000.0
     min_part = seconds // 60.0
     sec_part = seconds % 60.0
-    return '{}:{}'.format(min_part, sec_part)
+    return '{:n}:{:02n}'.format(min_part, sec_part)
 
 def state():
-    '''Get The playback state: PLAYING, PAUSED, or STOPPED.
+    '''Get The playback state: 'playing', 'paused', or 'stopped'.
 
     If PLAYING or PAUSED, show information on current track.
 
@@ -35,15 +37,18 @@ def state():
 
     server = getServer()
     state = server.core.playback.get_state()
-    logger.debug('Got playback state: %r', state)
-    if state == 'STOPPED':
+    logging.debug('Got playback state: %r', state)
+    if state.upper() == 'STOPPED':
         print('Playback is currently stopped')
     else:
         track = server.core.playback.get_current_track()
+        logging.debug('Track is %r', track)
+        logging.debug('Track loaded is %r', jsonrpclib.jsonclass.load(track))
         pos = server.core.playback.get_time_position()
+        logging.debug('Pos is %r', pos)
         print('{} track: "{}", by {} (at {})'.format(state.title(),
-                                                     track.title,
-                                                     track.artists,
+                                                     track['name'],
+                                                     ','.join([a['name'] for a in track['artists']]),
                                                      formatTimeposition(pos))
               )
 
@@ -93,16 +98,24 @@ def previous():
 
     return getServer().core.playback.previous()
 
-  def tracklist():
+def tracklist():
     '''Get tracklist
 
     Calls TracklistController.get_tl_tracks()
     '''
-    for tlid, t in getServer().core.tracklist.get_tl_tracks():
-        print('{}: {}'.format(tlid, t.title))
+    _c = 0
+    server = getServer()
+    _current = server.core.tracklist.index()
+    for t in server.core.tracklist.get_tl_tracks():
+        logging.debug('Got tl trak: %r', t)
+        currently = ' -- CURRENT' if t['tlid'] == _current else ''
+        print('{}: {}{}'.format(t['tlid'], t['track']['name'], currently))
+        _c = _c+1
+    print('==='*6)
+    print('{} tracks in tracklist'.format(_c))
 
 
-  def shuffle():
+def shuffle():
     '''Shuffles the entire tracklist.
 
     Calls TracklistController.shuffle(start=None, end=None)'''
