@@ -63,15 +63,14 @@ Project resources
 Credits
 =======
 
-- Original author: ` <https://github.com/havardgulldahl`__
-- Current maintainer: ` <https://github.com/havardgulldahl`__
+- Original author: `@havardgulldahl <https://github.com/havardgulldahl>`_
 - `Contributors <https://github.com/havardgulldahl/mopidy-commandline/graphs/contributors>`_
 
 
 Changelog
 =========
 
-v0.1.0 (UNRELEASED)
+v0.1.0
 ----------------------------------------
 
 - Initial release.
