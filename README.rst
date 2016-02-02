@@ -31,25 +31,26 @@ Install by running::
 Or, if available, install the Debian/Ubuntu package from `apt.mopidy.com
 <http://apt.mopidy.com/>`_.
 
-Commands 
+Commands
 ========
 
 After installation, you'll get the following scripts::
 
     mopidy-next:	 Change to the next track.
-    
+
     mopidy-pause:	 Pause playback.
-    
+
     mopidy-play:	 play the currently active track.
-    
+
     mopidy-previous:	 Change to the previous track.
-    
+
     mopidy-resume:	 If paused, resume playing the current track.
-    
+
     mopidy-shuffle:	 Shuffles the entire tracklist.
-    
-    mopidy-state:	 Get The playback state: 'playing', 'paused', or 'stopped'. If PLAYING or PAUSED, show information on current track.
-    
+
+    mopidy-state:	 Get The playback state: 'playing', 'paused', or 'stopped'.
+                   If PLAYING or PAUSED, show information on current track.
+
     mopidy-tracklist:	 Get tracklist
 
 Project resources

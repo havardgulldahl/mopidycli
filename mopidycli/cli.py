@@ -4,19 +4,6 @@ import logging
 logging.basicConfig(level=logging.INFO)
 import jsonrpclib
 
-
-
-#             'mopidy-state = mopidycli.cli:state',
-#             'mopidy-play = mopidycli.cli:play',
-#             'mopidy-pause = mopidycli.cli:pause',
-#             'mopidy-resume = mopidycli.cli:resume',
-#             'mopidy-next = mopidycli.cli:next',
-#             'mopidy-previous = mopidycli.cli:previous',
-#             'mopidy-tracklist = mopidycli.cli:tracklist',
-#             'mopidy-shuffle = mopidycli.cli:shuffle',
-#         ],
-
-
 def getServer():
     return jsonrpclib.Server('http://192.168.0.182:6680/mopidy/rpc')
 
