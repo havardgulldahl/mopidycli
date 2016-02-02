@@ -31,6 +31,12 @@ Install by running::
 Or, if available, install the Debian/Ubuntu package from `apt.mopidy.com
 <http://apt.mopidy.com/>`_.
 
+
+Now export the ip address of your mopidy server if it is not running on the same machine.
+Like this::
+
+    export MOPIDYSERVER=192.168.0.100:6680
+
 Commands
 ========
 
@@ -74,3 +80,4 @@ v0.1.0
 ----------------------------------------
 
 - Initial release.
+- Control

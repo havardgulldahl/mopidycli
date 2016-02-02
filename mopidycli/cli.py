@@ -1,11 +1,13 @@
 from __future__ import unicode_literals
 
+import os
 import logging
 logging.basicConfig(level=logging.INFO)
 import jsonrpclib
 
 def getServer():
-    return jsonrpclib.Server('http://192.168.0.182:6680/mopidy/rpc')
+    ip = os.environ.get('MOPIDYSERVER', '127.0.0.1:6680')
+    return jsonrpclib.Server('http://{}/mopidy/rpc'.format(ip))
 
 def formatTimeposition(milliseconds):
     seconds = milliseconds//1000.0
