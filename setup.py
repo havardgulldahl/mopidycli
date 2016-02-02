@@ -12,29 +12,34 @@ def get_version(filename):
 
 
 setup(
-    name='Mopidy-Commandline',
-    version=get_version('mopidy_commandline/__init__.py'),
-    url='https://github.com/havardgulldahl/mopidy-commandline',
+    name='MopidyCLI',
+    version=get_version('mopidycli/__init__.py'),
+    url='https://github.com/havardgulldahl/mopidycli',
     license='Apache License, Version 2.0',
     author='Håvard Gulldahl',
     author_email='havard@gulldahl.no',
-    description='Mopidy frontend extension for controlling playback from command line',
+    description='Mopidy tool controlling playback from command line',
     long_description=open('README.rst').read(),
     packages=find_packages(exclude=['tests', 'tests.*']),
     zip_safe=False,
     include_package_data=True,
     install_requires=[
         'setuptools',
-        'Mopidy >= 1.0',
-        'Pykka >= 1.1',
+        'jsonrpclib',
     ],
     entry_points={
-        'mopidy.ext': [
-            'commandline = mopidy_commandline:Extension',
+        'console_scripts': [
+            'mopidy-state = mopidycli.cli:state',
+            'mopidy-play = mopidycli.cli:play',
+            'mopidy-pause = mopidycli.cli:pause',
+            'mopidy-resume = mopidycli.cli:resume',
+            'mopidy-next = mopidycli.cli:next',
+            'mopidy-previous = mopidycli.cli:previous',
+            'mopidy-tracklist = mopidycli.cli:tracklist',
+            'mopidy-shuffle = mopidycli.cli:shuffle',
         ],
     },
     classifiers=[
-        'Environment :: No Input/Output (Daemon)',
         'Intended Audience :: End Users/Desktop',
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',

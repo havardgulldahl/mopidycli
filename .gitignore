@@ -7,3 +7,8 @@
 MANIFEST
 build/
 dist/
+bin/
+lib/
+.Python
+include/
+
