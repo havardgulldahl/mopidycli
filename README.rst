@@ -1,24 +1,24 @@
 ****************************
-Mopidy-Commandline
+mopidycli
 ****************************
 
-.. image:: https://img.shields.io/pypi/v/Mopidy-Commandline.svg?style=flat
-    :target: https://pypi.python.org/pypi/Mopidy-Commandline/
+.. image:: https://img.shields.io/pypi/v/mopidycli.svg?style=flat
+    :target: https://pypi.python.org/pypi/mopidycli/
     :alt: Latest PyPI version
 
-.. image:: https://img.shields.io/pypi/dm/Mopidy-Commandline.svg?style=flat
-    :target: https://pypi.python.org/pypi/Mopidy-Commandline/
+.. image:: https://img.shields.io/pypi/dm/mopidycli.svg?style=flat
+    :target: https://pypi.python.org/pypi/mopidycli/
     :alt: Number of PyPI downloads
 
-.. image:: https://img.shields.io/travis/havardgulldahl/mopidy_commandline/master.svg?style=flat
-    :target: https://travis-ci.org/havardgulldahl/mopidy_commandline
+.. image:: https://img.shields.io/travis/havardgulldahl/mopidycli/master.svg?style=flat
+    :target: https://travis-ci.org/havardgulldahl/mopidycli
     :alt: Travis CI build status
 
-.. image:: https://img.shields.io/coveralls/havardgulldahl/mopidy_commandline/master.svg?style=flat
-   :target: https://coveralls.io/r/havardgulldahl/mopidy_commandline
+.. image:: https://img.shields.io/coveralls/havardgulldahl/mopidycli/master.svg?style=flat
+   :target: https://coveralls.io/r/havardgulldahl/mopidycli
    :alt: Test coverage
 
-Mopidy frontend extension for controlling playback from command line
+Mopidy tool for controlling playback from command line
 
 
 Installation
@@ -26,20 +26,11 @@ Installation
 
 Install by running::
 
-    pip install Mopidy-Commandline
+    pip install mopidycli
 
 Or, if available, install the Debian/Ubuntu package from `apt.mopidy.com
 <http://apt.mopidy.com/>`_.
 
-
-Configuration
-=============
-
-Before starting Mopidy, you must add configuration for
-Mopidy-Commandline to your Mopidy configuration file::
-
-    [commandline]
-    # TODO: Add example of extension config
 
 
 Project resources
