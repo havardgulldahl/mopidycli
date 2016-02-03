@@ -59,6 +59,8 @@ After installation, you'll get the following scripts::
 
     mopidy-tracklist:	 Get tracklist
 
+    mopidy-play-backend-uri:   Play a specific backend uri, like 'plex:album:6247' or 'spotify:track:XXX'
+
 Project resources
 =================
 
@@ -75,6 +77,12 @@ Credits
 
 Changelog
 =========
+
+v0.2.0 (2016-02-03)
+----------------------------------------
+
+- New command, `mopidy-play-backend-uri`, to play an album or track by backend uri.
+
 
 v0.1.0
 ----------------------------------------
